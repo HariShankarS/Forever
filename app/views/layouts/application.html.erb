@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sniglet" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cherry+Cream+Soda"/>  
+  <link rel='stylesheet' type='text/css' href="//fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext"/>
+</head>
+<body>
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Posts",posts_path %></li>
+        <li><%= link_to "New Post",new_post_path %></li>        
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input class="form-control col-md-8" placeholder="Search" type="text">
+        </div>
+      </form>
+        <% if user_signed_in? %>
+          <%= current_user.name.capitalize%>
+        <% end %>
+      <ul class="nav navbar-nav navbar-right">   
+        <li class="dropdown">
+          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons">more_horiz</i>
+            </a>
+          <ul class="dropdown-menu">
+            <% unless user_signed_in? %>
+              <li><%= link_to "Sign In",new_user_session_path %></li>
+              <li><%= link_to "Sign Up",new_user_registration_path %></li>
+            <% end %>  
+            <% if user_signed_in? %>
+            <li><%= link_to "Account update",edit_user_registration_path%></li>
+            <li><%= link_to "Sign Out",destroy_user_session_path, method: :delete%></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+	<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<%= form_for([post, post.comments.build], remote: true) do |f| %>
+  	<div id="resizable" class="col-md-10 form-group emoji-picker clearfix">
+		<%= f.label :comment, class: "control-label user-writing" %><br />
+		<%= f.text_field :cmnt, class: "user-writing textarea ", data: { emojiable: true }%>
+	</div>
+  	<div class="col-md-10">
+		<%= f.submit :Create, class: "btn btn-raised btn-info create-comment"%>
+	</div>
+<% end %>

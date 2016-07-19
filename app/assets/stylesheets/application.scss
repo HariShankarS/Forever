@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-material-design/";
+@import "ripples";
+@import 'rails_emoji_picker';
+
+.imge {
+  width: 100px;
+  height: 100px; 
+}
+h1{
+  text-align: center;
+}
+
+.post {
+  padding-left: 0px! important;
+  padding-right: 0px! important;
+}
+.post-text {
+  font-family: Sniglet !important;
+}
+.user-name {
+  font-family: Sniglet !important;
+}
+.dropdown-menu.pull-left {
+  left:0;
+}
+.comment {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.comment_user_name {
+  color: #848484;
+}
+.center {
+   margin-left: auto;
+    margin-right: auto
+}
+._content {
+  word-wrap: break-word;
+}
+.love {
+  color: red;
+  font-size: 35px! important;
+}
+.user-writing, h6 {
+   font-family: Sniglet !important; 
+}
+
+.post-head {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.post-action {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.time {
+  cursor:pointer;
+}
+.beforelike {
+  color: #848484;
+  font-size: 20px! important;
+}
+.post-action a {
+  outline: 0! important;
+}
+  #resizable { 
+  max-width: 90%;
+}
+
+#comment-button {
+  outline: 0! important;  
+}

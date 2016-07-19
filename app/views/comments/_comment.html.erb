@@ -1,0 +1,36 @@
+<div class="comment clearfix">
+	<span id="comment_<%= comment.id %>">
+	<div class="_content">
+		<% if comment.user.avatar.present?%>
+        	<%= image_tag(comment.user.avatar, size:"30x30", class: "img-circle")%>
+     	<% end %>
+     	<span class="user-name comment_user_name"> <%= comment.user.name %> </span>
+	 	<span class="comment"><strong><%= content_with_emoji(comment.cmnt) %></strong></span>
+	 <h6>&nbsp; &nbsp;&nbsp; &nbsp;
+        <% if user_signed_in? %>
+          <span class="forcomments">
+        	<% if  current_user.voted_up_on? comment %> 
+        		<%= link_to dislike_post_comment_path(post, comment), method: :get, remote: true, class: "dislike_comment" do %><i class="material-icons ">thumb_up</i><% end %>&nbsp;<span data-toggle="tooltip" data-placement="down" title="" class="time user-name" data-original-title= "<%= comment.liked_users %>"> (<%= comment.get_upvotes.size %>)</span>
+       		<% else %>
+       			 <%= link_to like_post_comment_path(post, comment), method: :get, remote: true, class: "like_comment" do %><i class="material-icons beforelike">thumb_up</i><% end %>&nbsp;<span data-toggle="tooltip" data-placement="down" title="" class="time user-name" data-original-title= "<%= comment.liked_users %>">(<%= comment.get_upvotes.size %>)</span>
+       		<% end %>
+       	  </span>
+        <% end %>	 	
+	 <span data-toggle="tooltip" data-placement="top" title="" class="time user-name" data-original-title= "<%=comment.created_at.strftime("%d %b %Y %l:%M %p") %>">&nbsp; &nbsp;&nbsp; &nbsp;
+	 	<% if time_ago_in_words(comment.created_at).include? "less" %>
+	 		<%= time_ago_in_words(comment.created_at).gsub('less','').gsub('than',''+'Just now').gsub('a','').gsub('minute','') %>
+	 	<% else %>
+	 		<%= time_ago_in_words(comment.created_at).gsub('about','').gsub('ours','').gsub('our','').gsub('inutes','').gsub('ays','').gsub('inute','').gsub('ay','')%>
+	 	<% end %>
+	 </span>
+		<% if current_user == comment.user  %>&nbsp; &nbsp;&nbsp; &nbsp;
+			<%= link_to "Delete", [comment.post, comment], method: :delete, remote: true, class: "button ", data: {confirm: "Are yo sure?"} %>
+		<% end %>
+	 </h6>
+	</div>
+</div>
+
+
+
+
+

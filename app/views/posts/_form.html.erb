@@ -1,0 +1,25 @@
+<%= form_for @post, html: { multipart: true} do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="resizable" class="col-md-10 form-group emoji-picker">
+    <%= f.label :post, class: "control-label user-writing" %><br />
+    <%= f.text_field :body, class: "user-writing textarea", data: { emojiable: true }%>
+  </div>
+  <div class="col-md-10">
+    <%= f.label :photo, class: "user-writing" %>
+    <%= f.file_field :avatar, class: "user-writing"  %>
+  </div>
+
+  <div class="col-md-10">
+    <%= f.submit :POST, class: "btn btn-raised btn-info" %>
+  </div>
+<% end %>
