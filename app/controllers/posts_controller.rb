@@ -7,6 +7,21 @@ class PostsController < ApplicationController
     @posts = Post.all.order("created_at DESC")
   end
 
+  def user_posts
+    @user = User.find(params[:id])
+    @user_posts = Post.where(user_id: params[:id]).order("created_at DESC")
+  end
+
+  def media
+    @user = User.find(params[:id])
+    @user_posts = Post.where(user_id: params[:id]).order("created_at DESC")   
+  end
+
+  def likes
+    @user = User.find(params[:id])    
+    @votes = @user.votes.where(votable_type: "Post").includes(:votable).order("created_at DESC")
+    @posts = @votes.collect(&:votable)    
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -29,7 +44,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_url, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -43,7 +58,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to posts_url, notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }

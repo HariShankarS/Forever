@@ -1,0 +1,13 @@
+<%= link_to "Posts",user_posts_post_path(id: params[:id]) %>
+<%= link_to "Media",media_post_path(id: params[:id]) %>
+<%= link_to "Likes",likes_post_path(id: params[:id]) %>
+
+<div class="container-fluid index">
+   <% @user_posts.each do |post| %>
+   <%if post.avatar.present? %>
+
+    <%= render partial: "posts/newsfeed", locals: {post: post} %>
+   <% end %>
+   <% end %> 
+ </div>   
+ <br />

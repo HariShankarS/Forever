@@ -8,7 +8,9 @@
               <% if @post.user.avatar.present?%>
                 <%= image_tag(@post.user.avatar, size:"30x30", class: "img-circle")%>
               <% end %>
-              <span class="user-name"><%= @post.user.name%></span>
+              <span class="user-name"><span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= " <%= @post.user.name %>"><%= link_to user_posts_post_path(id: @post.user_id) do %> <%= @post.user.name%>
+                <% end %>                
+              </span></span>
               <span class="pull-right">
               <h4 data-toggle="tooltip" data-placement="left" title="" class="time user-name" data-original-title= "<%=@post.created_at.strftime("%d %b %Y %l:%M %p") %>">              
                 <% if time_ago_in_words(@post.created_at).include? "less" %>

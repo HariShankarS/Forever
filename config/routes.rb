@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     member do
       get "like" => "posts#upvote"
       get "dislike" => "posts#downvote"
+      get 'user_posts'
+      get 'media'
+      get 'likes'
     end
 
     resources :comments do

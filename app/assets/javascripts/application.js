@@ -19,13 +19,21 @@
 
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
-  $.material.init();
-});
-
-$(document).ready(function(){
   $('[data-toggle="popover"]').popover();
   $.material.init();
+  if($("#resizable").length > 0) {
+    $("#resizable").resizable();
+  }
 });
-  $( function() {
-    $( "#resizable" ).resizable();
-  } );
+
+function openNav() {
+  $('#main-sandwich').addClass('main-sandwich-active');
+  document.getElementById("mySidenav").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "100%";
+}
+
+function closeNav() {
+  $('#main-sandwich').removeClass('main-sandwich-active');
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}

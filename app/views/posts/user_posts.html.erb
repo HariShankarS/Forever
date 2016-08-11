@@ -1,0 +1,15 @@
+<%= image_tag(@user.cover, class: "cover-pic img-responsive")%>
+<br /><br />
+<div class="container">
+  <div class="col-md-2 col-md-offset-4">
+  <%= image_tag(@user.avatar, class: "profile-pic img-responsive img-circle")%>
+</div>
+<div class="container-fluid index">
+   <% @user_posts.each do |post| %>
+    <%= render partial: "posts/newsfeed", locals: {post: post} %>
+   <% end %>
+ </div>   
+ <br />
+ <%= link_to "Posts",user_posts_post_path(id: params[:id]) %>
+<%= link_to "Media",media_post_path(id: params[:id]) %>
+<%= link_to "Likes",likes_post_path(id: params[:id]) %>

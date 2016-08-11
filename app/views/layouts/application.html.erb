@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>One</title>
+  <title>Forever - Friends Forever - Marine Dynamites</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,50 +11,99 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sniglet" />
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cherry+Cream+Soda"/>  
   <link rel='stylesheet' type='text/css' href="//fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext"/>
+  <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Jura'>
 </head>
+ <script type="text/javascript">
+
+ </script> 
 <body>
-<div class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="material-icons">close</i></a>
+    <div class="col-md-8 col-md-offset-2 col-xs-12 navv heading_in_nav">
+      <span class="orange">Good 
+        <% if Time.now.hour < 12 %>
+          Morning, 
+        <% elsif Time.now.hour >= 12 && Time.now.hour < 16 %> 
+          Afternoon,
+        <% elsif Time.now.hour >= 16 && Time.now.hour < 21 %> 
+          Evening,
+        <% elsif Time.now.hour >= 21 %>
+          Night,
+        <% end %>   
+        <% if user_signed_in? %> 
+        <%= current_user.name.split(" ")[0] %> !
+        <% end %> 
+        Where do you want to go ?
+      </span>
     </div>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Posts",posts_path %></li>
-        <li><%= link_to "New Post",new_post_path %></li>        
-      </ul>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input class="form-control col-md-8" placeholder="Search" type="text">
+    <div class="container">
+    <%= link_to posts_path do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv">Timeline <br /> 
+          <span class="under-nav">Want to know what is happening around ?</span>
         </div>
-      </form>
-        <% if user_signed_in? %>
-          <%= current_user.name.capitalize%>
-        <% end %>
-      <ul class="nav navbar-nav navbar-right">   
-        <li class="dropdown">
-          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="material-icons">more_horiz</i>
-            </a>
-          <ul class="dropdown-menu">
-            <% unless user_signed_in? %>
-              <li><%= link_to "Sign In",new_user_session_path %></li>
-              <li><%= link_to "Sign Up",new_user_registration_path %></li>
-            <% end %>  
-            <% if user_signed_in? %>
-            <li><%= link_to "Account update",edit_user_registration_path%></li>
-            <li><%= link_to "Sign Out",destroy_user_session_path, method: :delete%></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
+        <div class="col-md-2 col-xs-2 glyphicon glyphicon-home orange">
+        </div>
+      </div>
+    <%end%> 
+    <%= link_to new_post_path do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv">New Post <br />
+          <span class="under-nav">Add a new post </span>
+        </div>
+        <div class="col-md-2 col-xs-2 glyphicon glyphicon-envelope orange">
+        </div>
+      </div>
+    <%end%> 
+    <% unless user_signed_in? %>
+      <%= link_to new_user_session_path do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv">Sign In <br />
+          <span class="under-nav"> Hello ! Welcome back to Forever</span>
+        </div>
+        <div class="col-md-2 col-xs-2 orange">
+          <i class="material-icons" style="font-size:30px;">person</i>
+        </div>
+      </div>
+      <%end%> 
+      <%= link_to new_user_registration_path do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv">Sign Up <br />
+          <span class="under-nav"> Hey, new user ? Alright ! Sign up here. </span>
+        </div>
+        <div class="col-md-2 col-xs-2 orange">
+          <i class="material-icons" style="font-size:30px;">person_add</i>
+        </div>
+      </div>  
+      <%end%> 
+    <% end %>  
+    <% if user_signed_in? %>
+      <%= link_to edit_user_registration_path do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv">Account Update <br />
+          <span class="under-nav">Want to edit your profile ? </span> 
+        </div> 
+        <div class="col-md-2 col-xs-2 glyphicon glyphicon-repeat orange">
+        </div>
+      </div>
+      <%end%> 
+      <%= link_to destroy_user_session_path, method: :delete do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv">Sign Out <br />
+          <span class="under-nav">Want to say 'bye' for now ? </span>
+        </div>
+        <div class="col-md-2 col-xs-2 orange">
+          <i class="material-icons" style="font-size:30px;">pan_tool</i>
+        </div>
+      </div>  
+      <%end%> 
+    <% end %>
     </div>
-  </div>
+</div>
+
+<div id="main-sandwich" onclick="openNav();">
+  <span style="cursor:pointer;color:white"><i class="material-icons">view_headline</i></span>
 </div>
 	<%= yield %>
 

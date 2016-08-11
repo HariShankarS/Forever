@@ -14,12 +14,11 @@
     <%= f.label :post, class: "control-label user-writing" %><br />
     <%= f.text_field :body, class: "user-writing textarea", data: { emojiable: true }%>
   </div>
-  <div class="col-md-10">
-    <%= f.label :photo, class: "user-writing" %>
-    <%= f.file_field :avatar, class: "user-writing"  %>
+  <div class="col-md-10 col-xs-10 glyphicon glyphicon-camera fileinput-button">
+    <%= f.file_field :avatar %>
   </div>
-
-  <div class="col-md-10">
+  <br />  
+  <div class="col-md-10 col-xs-10">
     <%= f.submit :POST, class: "btn btn-raised btn-info" %>
   </div>
 <% end %>

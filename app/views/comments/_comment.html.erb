@@ -1,10 +1,10 @@
 <div class="comment clearfix">
 	<span id="comment_<%= comment.id %>">
-	<div class="_content">
+	<div class="_content"><br />
 		<% if comment.user.avatar.present?%>
         	<%= image_tag(comment.user.avatar, size:"30x30", class: "img-circle")%>
      	<% end %>
-     	<span class="user-name comment_user_name"> <%= comment.user.name %> </span>
+     	<span class="user-name comment_user_name"> <span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= " <%= comment.user.name %>"><%= comment.user.name %> </span></span>
 	 	<span class="comment"><strong><%= content_with_emoji(comment.cmnt) %></strong></span>
 	 <h6>&nbsp; &nbsp;&nbsp; &nbsp;
         <% if user_signed_in? %>

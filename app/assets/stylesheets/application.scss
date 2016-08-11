@@ -17,6 +17,9 @@
 @import "ripples";
 @import 'rails_emoji_picker';
 
+body {
+  background-color: #F2F2F2;
+}
 .imge {
   width: 100px;
   height: 100px; 
@@ -46,8 +49,9 @@ h1{
 }
 .center {
    margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
 }
+
 ._content {
   word-wrap: break-word;
 }
@@ -83,4 +87,173 @@ h1{
 
 #comment-button {
   outline: 0! important;  
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #070719;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidenav a {
+  outline: 0;
+}
+.orange {
+  color: #FF8000 !important;
+  top: 20px !important;
+}
+.glyphicon {
+  font-size: 30px;
+}
+.heading_in_nav {
+  margin-bottom: 50px! important;
+}
+.navv {
+  height: 100px;
+  font-family: 'Jura', sans-serif;
+  font-size: 30px;
+  color: white; 
+  padding-left: 25px! important;  
+}
+.row {
+  margin-top: 10px! important;
+  margin-bottom: 10px! important;  
+  line-height: 150%;
+}
+.under-nav {
+  color: #848484 !important;
+  font-size: 15px !important;
+}
+.navv:hover {
+  color: #FF8000;
+} 
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    margin-left: 50px;
+    color: white;
+    text-decoration: none !important;
+    padding-top: 10px;
+}
+.closebtn:hover,.closebtn:focus {
+  color: #BDBDBD
+}
+#main-sandwich {
+    right: 12px;    
+    position: fixed;
+    top: 0;    
+    z-index: 1;
+    transition: transform 0.3s;
+    padding-top: 10px;
+}
+#main-sandwich i {
+    border-radius: 40px;
+    padding: 8px;
+    background: #0A0A2A;
+}
+
+.main-sandwich-active {
+  transform: rotate(360deg);
+  padding-top: 10px;  
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.post-head a{ 
+
+text-decoration: none;
+outline: 0! important;
+}
+.registration {
+  padding-left: 0px! important;
+  padding-right: 0px! important;
+}
+.overlay {
+      position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1; 
+  padding-left: 0px! important;
+  padding-right: 0px! important;
+}
+.transparent-input {
+       background-color:rgba(0,0,0,0) !important;
+       border: 0.5px solid black !important;
+}
+.labe {
+    color: white;
+   font-family: Sniglet !important;     
+}
+.mainn {
+  background: 
+    linear-gradient(
+      rgba(255, 0, 0, 0.5),
+      rgba(255, 0, 0, 0.5)
+    );
+    position: absolute;
+    left: 0px;
+    top: 0px;    
+      margin-left: 0px! important;
+     margin-top: 0px! important;
+    min-height: 1127.5px;
+    }
+h2 {
+  text-align: center;
+  font-family: Sniglet !important; 
+}
+
+h1 {
+  text-align: center;
+  font-family: Sniglet !important; 
+  font-weight: 800;
+  color: white;
+}
+.innerdiv {
+  margin-top: 40px;
+  padding: 10px;
+}
+.col-md-6 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.index {
+  padding-left: 0px;
+  padding-right: 0px; 
+}
+.post-action .more_horiz {
+  padding-top: 15px;
+  padding-right: 15px;  
+  color: black;
+}
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: 4px;
+  width: 90px;
+  height: 32px;
+  margin: 15px;
+  input{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    direction: ltr;
+    cursor: pointer;
+  }
+}
+.cover-pic {
+  max-height: 400px;
+  min-width: 100%;
+}
+.profile-pic {
+  border: 2px solid white;
 }
