@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810133717) do
+ActiveRecord::Schema.define(version: 20160812043040) do
 
   create_table "assets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -56,10 +56,10 @@ ActiveRecord::Schema.define(version: 20160810133717) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "cover_file_name"
-    t.string   "cover_content_type"
-    t.integer  "cover_file_size"
-    t.datetime "cover_updated_at"
+    t.string   "status"
+    t.string   "dobrake"
+    t.string   "occupation"
+    t.string   "dob"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

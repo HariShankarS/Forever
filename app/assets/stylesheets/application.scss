@@ -48,8 +48,7 @@ h1{
   color: #848484;
 }
 .center {
-   margin-left: auto;
-    margin-right: auto;
+  width: 100%;
 }
 
 ._content {
@@ -60,9 +59,14 @@ h1{
   font-size: 35px! important;
 }
 .user-writing, h6 {
-   font-family: Sniglet !important; 
+  font-family: Sniglet !important; 
 }
-
+.user-status {
+  font-family: 'Josefin Sans', sans-serif;
+}
+h2,h5 {
+  text-align: center;
+}
 .post-head {
   padding-left: 5%;
   padding-right: 5%;
@@ -251,9 +255,12 @@ h1 {
   }
 }
 .cover-pic {
-  max-height: 400px;
   min-width: 100%;
 }
 .profile-pic {
   border: 2px solid white;
+}
+.user_pics {
+  border: 2px solid white;  
+  width: 100%;
 }

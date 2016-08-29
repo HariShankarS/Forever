@@ -1,5 +1,5 @@
 <div class="container index">
-   <% @posts.each do |post| %>
+  <% @posts.each do |post| %>
     <span id="post_<%= post.id %>">
       <div class="container-fluid">
 	      <div class="row ">
@@ -7,12 +7,14 @@
             <div class="well well-sm clearfix post">
               <div class="post-head">
         		    <h3>
-                  <% if post.user.avatar.present?%>
+                  <% if post.user.avatar.present? %>
                     <%= image_tag(post.user.avatar, size:"30x30", class: "img-circle")%>
                   <% end %>
                   <span class="user-name">
-                    <span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= " <%= post.user.name %>"><%= link_to user_posts_post_path(id: post.user_id) do %> <%= post.user.name%>
-                    <% end %>                
+                    <span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= " <%= post.user.name %>">
+                      <%= link_to user_posts_post_path(id: post.user_id) do %> 
+                        <%= post.user.name%>
+                      <% end %>                
                     </span>
                   </span>
                   <span class="pull-right">
@@ -38,42 +40,45 @@
            		  <%= image_tag(post.avatar, class: "img-responsive center") %>
               <% end %>
               <% if user_signed_in? %>
-              <div class="post-action">
-                <div class="row">
-                  <span class="votes">
+                <div class="post-action">
+                  <div class="row">
+                    <span class="votes">
                       <% if  current_user.voted_up_on? post %>                         
-                        <%= link_to dislike_post_path(post), method: :get, remote: true, class: "dislike_post" do %><i class="material-icons love">favorite</i>
+                        <%= link_to dislike_post_path(post), method: :get, remote: true, class: "dislike_post" do %>
+                          <i class="material-icons love">favorite</i>
                         <% end %>
-                        <span data-toggle="tooltip" data-placement="top" title="" class="time user-name" data-original-title= " <%= post.liked_users %>">(<%= post.get_upvotes.size %>)
+                        <span data-toggle="tooltip" data-placement="top" title="" class="time user-name" data-original-title= " <%= post.liked_users %>">
+                        (<%= post.get_upvotes.size %>)
                         </span>
                       <% else %>
                         <%= link_to like_post_path(post), method: :get , remote: true, class: "like_post" do%><i class="material-icons love">favorite_border</i>
-                      <% end %>
-                      <span data-toggle="tooltip" data-placement="top" title="" class="time user-name" data-original-title= " <%= post.liked_users %>">(<%= post.get_upvotes.size %>)</span>
-                  </span>
-                  <span id="comment-count"> 
-                    <%= render partial: "comments/comment_count", locals: {post: post} %>       
-                  </span>
-                  <ul style="list-style-type:none" class="pull-right"> 
-                    <li class="dropdown">
-                      <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="material-icons more_horiz">more_horiz</i>
-                       </a>
-                      <h6 class="dropdown-menu dropdown-menu-right">
-                        <li><%= link_to "View",post %></li>
-                        <% if post.user == current_user %>  
-                          <li><%= link_to 'Edit the post', edit_post_path(post) %></li>
-                          <li><%= link_to 'Delete the post', post, method: :delete, remote: true, class: "delete_post", data: { confirm: 'Are you sure?' }%></li>
                         <% end %>
-                      </h6>
-                    </li>
-                  </ul>
+                        <span data-toggle="tooltip" data-placement="top" title="" class="time user-name" data-original-title= " <%= post.liked_users %>">(<%= post.get_upvotes.size %>)
+                        </span>
+                      <% end%>
+                    </span>
+                    <span id="comment-count"> 
+                      <%= render partial: "comments/comment_count", locals: {post: post} %>       
+                    </span>
+                    <ul style="list-style-type:none" class="pull-right"> 
+                      <li class="dropdown">
+                        <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
+                          <i class="material-icons more_horiz">more_horiz</i>
+                        </a>
+                        <h6 class="dropdown-menu dropdown-menu-right">
+                          <li><%= link_to "View",post %></li>
+                          <% if post.user == current_user %>  
+                            <li><%= link_to 'Edit the post', edit_post_path(post) %></li>
+                            <li><%= link_to 'Delete the post', post, method: :delete, remote: true, class: "delete_post", data: { confirm: 'Are you sure?' }%></li>
+                          <% end %>
+                        </h6>
+                      </li>
+                    </ul>
+                  </div>
+                  <div id="comment-section" class="collapse"> 
+                    <%= render partial: "comments/comments", locals: {post: post} %>  
+                  </div>
                 </div>
-                <div id="comment-section" class="collapse"> 
-                  <%= render partial: "comments/comments", locals: {post: post} %>  
-                </div>
-              </div>
-              <% end %>
               <% end %>
    		      </div>
    	      </div>

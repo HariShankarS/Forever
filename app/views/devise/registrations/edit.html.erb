@@ -22,11 +22,19 @@
   <div class="field">
     <%= f.label :Profile_Picture, class:"labe" %><br>
     <%= f.file_field :avatar %>
-  </div>
-  <div class="field">
-    <%= f.label :Cover_Photo, class:"labe" %><br>
-    <%= f.file_field :cover %>
   </div>  
+  <div class="field ">
+    <%= f.label :status, class:"labe" %><br />
+    <%= f.text_field :status, autofocus: true, class: "transparent-input" %>
+  </div> 
+  <div class="field ">
+    <%= f.label :Date_of_birth, class:"labe" %><br />
+    <%= f.text_field :dob, autofocus: true, class: "transparent-input" %>
+  </div>    
+  <div class="field ">
+    <%= f.label :occupation, class:"labe" %><br />
+    <%= f.text_field :occupation, autofocus: true, class: "transparent-input" %>
+  </div> 
   <div class="field">
     <%= f.label :email, class:"labe" %><br />
     <%= f.email_field :email, autofocus: true, class: "transparent-input" %>
@@ -56,10 +64,10 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<!-- <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back %> -->
 </div>
 </div>

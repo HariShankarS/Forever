@@ -24,9 +24,9 @@
     <%= f.label :Profile_Picture, class:"labe" %><br>
     <%= f.file_field :avatar %>
   </div>
-  <div class="field">
-    <%= f.label :Cover_Photo, class:"labe" %><br>
-    <%= f.file_field :cover %>
+  <div class="field ">
+    <%= f.label :status, class:"labe" %><br />
+    <%= f.text_field :status, autofocus: true, class: "transparent-input" %>
   </div>  
   <div class="field">
     <%= f.label :email, class:"labe" %><br />

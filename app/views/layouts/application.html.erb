@@ -88,6 +88,16 @@
         </div>
       </div>
       <%end%> 
+      <%= link_to user_posts_post_path(id: current_user.id) do %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2 col-xs-8 navv"> My Profile <br />
+          <span class="under-nav">Want to see your profile ? </span> 
+        </div> 
+        <div class="col-md-2 col-xs-2 orange">
+          <i class="material-icons" style="font-size:30px;">person</i>
+        </div>
+      </div>
+      <%end%>       
       <%= link_to destroy_user_session_path, method: :delete do %>
       <div class="row">
         <div class="col-md-6 col-md-offset-2 col-xs-8 navv">Sign Out <br />
