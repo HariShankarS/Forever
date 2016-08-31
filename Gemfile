@@ -11,9 +11,10 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", "~> 5.0.0"
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'rails_emoji_picker'
+gem "cocoon"
 group :development, :test do
   gem 'byebug'
 end

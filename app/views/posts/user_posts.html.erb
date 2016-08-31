@@ -1,7 +1,7 @@
 <br /> <br />
 <div class="container">
   <div class="col-md-2 col-md-offset-5">
-  	<%= image_tag(@user.avatar, class: "profile-pic img-responsive img-rounded")%>
+  	<%= image_tag(@user.avatar.url(:medium), class: "profile-pic img-responsive img-rounded")%>
   </div>
   <div class="col-md-4 col-md-offset-4">
   	<h2 class="user-writing"><%= @user.name %></h3>

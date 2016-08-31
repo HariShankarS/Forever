@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs	
+//= require cocoon
 //= require jquery-fileupload/basic
 //= require rails_emoji_picker
 //= require bootstrap-sprockets

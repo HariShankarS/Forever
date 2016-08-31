@@ -17,6 +17,13 @@
   <div class="col-md-10 col-xs-10 glyphicon glyphicon-camera fileinput-button">
     <%= f.file_field :avatar %>
   </div>
+  <div class="col-md-10 form-group">
+    <h3>Photographs</h3>
+    <%= f.fields_for :photographs do |photograph| %>
+      <%= render 'photograph_fields', f: photograph %>
+    <% end %>     
+      <%= link_to_add_association 'add photograph', f, :photographs %>
+  </div>
   <br />  
   <div class="col-md-10 col-xs-10">
     <%= f.submit :POST, class: "btn btn-raised btn-info" %>

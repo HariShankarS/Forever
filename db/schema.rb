@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812043040) do
+ActiveRecord::Schema.define(version: 20160831101720) do
 
   create_table "assets", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20160812043040) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "photographs", force: :cascade do |t|
+    t.integer  "post_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "chitram_file_name"
+    t.string   "chitram_content_type"
+    t.integer  "chitram_file_size"
+    t.datetime "chitram_updated_at"
+  end
+
+  add_index "photographs", ["post_id"], name: "index_photographs_on_post_id"
 
   create_table "posts", force: :cascade do |t|
     t.text     "body"
