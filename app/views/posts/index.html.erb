@@ -91,5 +91,6 @@
       </div>
     </span>
   <% end %>
+  <%= will_paginate @posts,renderer: BootstrapPagination::Rails, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>
 </div>   
 <br />
