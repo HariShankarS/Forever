@@ -2,14 +2,12 @@
   <% @posts.map do |post| %>
     <span id="post_<%= post.id %>">
       <div class="container-fluid">
-	      <div class="row ">
+        <div class="row">
           <div class="col-md-6 col-md-offset-3">
             <div class="well well-sm clearfix post">
               <div class="post-head">
-        		    <h3>
-                  <% if post.user.avatar.present? %>
-                    <%= image_tag(post.user.avatar.url(:medium), size:"50x50", class: "img-circle")%>
-                  <% end %>
+                <h3>
+                  <%= image_tag(post.user.avatar.url(:medium), size:"50x50", class: "img-circle")%> <% if post.user.avatar.present? %>
                   <span class="user-name">
                     <span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= " <%= post.user.name %>">
                       <%= link_to user_posts_post_path(id: post.user_id) do %> 
@@ -31,14 +29,10 @@
                 </h3>
                 <br />
                 <div class="_content">
-                  <% if post.body.present? %>
-          		      <h4 class="post-text"><%= content_with_emoji(post.body) %></h4>
-                  <% end %>
+                  <h4 class="post-text"><%= content_with_emoji(post.body) %></h4> <% if post.body.present? %>
                 </div>
               </div>
-              <% if post.avatar.present? %>
-           		  <%= image_tag(post.avatar, class: "img-responsive center") %>
-              <% end %>
+              <%= image_tag(post.avatar, class: "img-responsive center") %> <% if post.avatar.present? %>
               <% if post.photographs.present? %>
                 <% post.photographs.each do |photograph| %>
                   <%= image_tag(photograph.chitram, size:"100x100") %>
@@ -85,9 +79,9 @@
                   </div>
                 </div>
               <% end %>
-   		      </div>
-   	      </div>
-   	    </div>
+            </div>
+          </div>
+        </div>
       </div>
     </span>
   <% end %>

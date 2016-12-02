@@ -94,16 +94,16 @@ h2,h5 {
 }
 
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background-color: #070719;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: #070719;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 .sidenav a {
   outline: 0;
@@ -138,29 +138,29 @@ h2,h5 {
   color: #FF8000;
 } 
 .closebtn {
-    position: absolute;
-    top: 0;
-    right: 12px;
-    margin-left: 50px;
-    color: white;
-    text-decoration: none !important;
-    padding-top: 10px;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  margin-left: 50px;
+  color: white;
+  text-decoration: none !important;
+  padding-top: 10px;
 }
 .closebtn:hover,.closebtn:focus {
   color: #BDBDBD
 }
 #main-sandwich {
-    right: 12px;    
-    position: fixed;
-    top: 0;    
-    z-index: 1;
-    transition: transform 0.3s;
-    padding-top: 10px;
+  right: 12px;
+  position: fixed;
+  top: 0;    
+  z-index: 1;
+  transition: transform 0.3s;
+  padding-top: 10px;
 }
 #main-sandwich i {
-    border-radius: 40px;
-    padding: 8px;
-    background: #0A0A2A;
+  border-radius: 40px;
+  padding: 8px;
+  background: #0A0A2A;
 }
 
 .main-sandwich-active {
@@ -182,20 +182,20 @@ outline: 0! important;
   padding-right: 0px! important;
 }
 .overlay {
-      position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1; 
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1; 
   padding-left: 0px! important;
   padding-right: 0px! important;
 }
 .transparent-input {
-       background-color:rgba(0,0,0,0) !important;
-       border: 0.5px solid black !important;
+  background-color:rgba(0,0,0,0) !important;
+  border: 0.5px solid black !important;
 }
 .labe {
-    color: white;
-   font-family: Sniglet !important;     
+  color: white;
+  font-family: Sniglet !important;     
 }
 .mainn {
   background: 
@@ -203,13 +203,13 @@ outline: 0! important;
       rgba(255, 0, 0, 0.5),
       rgba(255, 0, 0, 0.5)
     );
-    position: absolute;
-    left: 0px;
-    top: 0px;    
-      margin-left: 0px! important;
-     margin-top: 0px! important;
-    min-height: 1127.5px;
-    }
+  position: absolute;
+  left: 0px;
+  top: 0px;    
+  margin-left: 0px! important;
+  margin-top: 0px! important;
+  min-height: 1127.5px;
+}
 h2 {
   text-align: center;
   font-family: Sniglet !important; 

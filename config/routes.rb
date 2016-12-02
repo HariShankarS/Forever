@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     end
 
     resources :comments do
-        member do
-          get :like, to:'comments#upvote'
-          get :dislike, to:'comments#downvote'
-        end
+      member do
+        get :like, to:'comments#upvote'
+        get :dislike, to:'comments#downvote'
+      end
     end
   end
   devise_for :users

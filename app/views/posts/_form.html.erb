@@ -2,11 +2,10 @@
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -22,7 +21,7 @@
     <%= f.fields_for :photographs do |photograph| %>
       <%= render 'photograph_fields', f: photograph %>
     <% end %>     
-      <%= link_to_add_association 'add photograph', f, :photographs %>
+    <%= link_to_add_association 'add photograph', f, :photographs %>
   </div>
   <br />  
   <div class="col-md-10 col-xs-10">

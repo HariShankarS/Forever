@@ -1,15 +1,15 @@
-<br /> <br />
+<br /><br />
 <div class="container">
   <div class="col-md-2 col-md-offset-5">
-  	<%= image_tag(@user.avatar.url(:medium), class: "profile-pic img-responsive img-rounded")%>
+    <%= image_tag(@user.avatar.url(:medium), class: "profile-pic img-responsive img-rounded")%>
   </div>
   <div class="col-md-4 col-md-offset-4">
-  	<h2 class="user-writing"><%= @user.name %></h3>
-  	<h5 class="user-status"><%= @user.status %></h5>
+    <h2 class="user-writing"><%= @user.name %></h3>
+    <h5 class="user-status"><%= @user.status %></h5>
     <h5 class="user-status"><%= @user.dob %></h5>
     <h5 class="user-status"><%= @user.occupation %></h5>
   </div>  
-</div> <br /> <br />
+</div><br /><br />
 <div class="container-fluid index">
   <h2 class="user-writing">
     <% if @user == current_user %>
@@ -19,20 +19,20 @@
     <% end %>  
   </h2>  
   <% if @user_posts.present? %>
-   <% @user_posts.each do |post| %>
-   	 <% if post.avatar.present? %>
-   	   <div class="col-md-6 col-md-offset-3">
-         <%= image_tag(post.avatar, class: "user_pics img-responsive img-rounded")%>
-   	   </div>          
-   	 <% end %> 
-   <% end %>
+    <% @user_posts.each do |post| %>
+      <% if post.avatar.present? %>
+        <div class="col-md-6 col-md-offset-3">
+          <%= image_tag(post.avatar, class: "user_pics img-responsive img-rounded")%>
+        </div>          
+      <% end %> 
+    <% end %>
   <% else %>
     <h5 class="user-status"> 
       <% if @user == current_user %>
         You
       <% else %>
         <%= @user.name.split(" ")[0] %>
-      <% end %>    
+      <% end %>
       haven't uploaded any photos yet </h5>   
-  <% end %>  
- </div>   
+  <% end %>
+</div>
