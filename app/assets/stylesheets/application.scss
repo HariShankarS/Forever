@@ -191,24 +191,20 @@ outline: 0! important;
 }
 .transparent-input {
   background-color:rgba(0,0,0,0) !important;
-  border: 0.5px solid black !important;
 }
 .labe {
   color: white;
   font-family: Sniglet !important;     
 }
 .mainn {
-  background: 
-    linear-gradient(
-      rgba(255, 0, 0, 0.5),
-      rgba(255, 0, 0, 0.5)
-    );
+  background: black;
+  opacity: 0.6;
   position: absolute;
   left: 0px;
   top: 0px;    
   margin-left: 0px! important;
   margin-top: 0px! important;
-  min-height: 1127.5px;
+  height: 672px;
 }
 h2 {
   text-align: center;

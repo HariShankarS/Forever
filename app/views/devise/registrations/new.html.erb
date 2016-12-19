@@ -1,11 +1,4 @@
-
-<div class="container-fluid overlay">
-  <% (1...31).to_a.shuffle.each do |i|%>
-    <div class="col-md-2 col-xs-4 registration ">
-      <%= image_tag("/r#{i}.jpg", class: "img-responsive")%>
-    </div>
-  <% end %>
-</div>
+<%= render partial: "background/bg" %>
 <div class="col-md-12 col-xs-12 mainn labe ">
   <div class="innerdiv col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1">
     <h1><%= image_tag("/logo.png", size: "150") %></h1>
