@@ -260,3 +260,23 @@ h1 {
   border: 2px solid white;  
   width: 100%;
 }
+.image_wrapper {
+  max-width: 100%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.magnify {
+  width: 100%;
+  height: 307.5px !important;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.col-md-3 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
