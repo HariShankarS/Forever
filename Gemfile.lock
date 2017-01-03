@@ -69,6 +69,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.10)
     emoji (1.0.7)
       json
     erubis (2.7.0)
@@ -196,6 +197,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   devise
+  devise-bootstrap-views
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
@@ -213,4 +215,4 @@ DEPENDENCIES
   will_paginate-bootstrap (~> 1.0, >= 1.0.1)
 
 BUNDLED WITH
-   1.12.3
+   1.13.2

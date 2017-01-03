@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_post
   before_action :find_comment, except: [:create]
+  
   def create 
     @comment = @post.comments.new(params[:comment].permit(:cmnt, :user_id, :post_id))
     @comment.user = current_user

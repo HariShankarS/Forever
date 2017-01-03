@@ -1,34 +1,33 @@
 <%= render partial: "background/bg" %>
 <div class="col-md-12 col-xs-12 mainn labe ">
-  <div class="innerdiv col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1">
-    <h1><%= image_tag("/logo.png", size: "150") %></h1>
-    <h1> FOREVER </h1>
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+  <div class="innerdiv col-md-2 col-md-offset-5 col-xs-12">
+    <% if resource.errors.empty? %>
+    <% else %>
+      <%= bootstrap_devise_error_messages! %>
+    <% end -%>  
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
       <div class="field">
-        <%= f.label :username, class:"labe" %><br />
+        <%= f.label :username, class:"labe" %>
         <%= f.text_field :name, autofocus: true, class: "transparent-input" %>
       </div>
       <div class="field">
-        <%= f.label :Profile_Picture, class:"labe" %><br>
+        <%= f.label :Profile_Picture, class:"labe" %>
         <%= f.file_field :avatar %>
       </div>  
       <div class="field ">
-        <%= f.label :status, class:"labe" %><br />
+        <%= f.label :status, class:"labe" %>
         <%= f.text_field :status, autofocus: true, class: "transparent-input" %>
       </div> 
       <div class="field ">
-        <%= f.label :Date_of_birth, class:"labe" %><br />
+        <%= f.label :Date_of_birth, class:"labe" %>
         <%= f.text_field :dob, autofocus: true, class: "transparent-input" %>
       </div>    
       <div class="field ">
-        <%= f.label :occupation, class:"labe" %><br />
+        <%= f.label :occupation, class:"labe" %>
         <%= f.text_field :occupation, autofocus: true, class: "transparent-input" %>
       </div> 
       <div class="field">
-        <%= f.label :email, class:"labe" %><br />
+        <%= f.label :email, class:"labe" %>
         <%= f.email_field :email, autofocus: true, class: "transparent-input" %>
       </div>
 
@@ -37,18 +36,18 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :password, class:"labe" %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "off", class: "transparent-input" %>
+        <%= f.label :password, class:"labe" %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.password_field :password, class: "transparent-input" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, class:"labe" %><br />
+        <%= f.label :password_confirmation, class:"labe" %>
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "transparent-input" %>
       </div>
 
       <div class="field">
-        <%= f.label :current_password, class:"labe" %> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "off", class: "transparent-input" %>
+        <%= f.label :current_password, class:"labe" %> <i>(we need ur current password to confirm your changes)</i>
+        <%= f.password_field :current_password, autofocus: true, class: "transparent-input" %>
       </div>
 
       <div class="actions">

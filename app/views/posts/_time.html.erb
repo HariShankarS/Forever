@@ -1,0 +1,9 @@
+<span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= "<%=item.created_at.strftime("%d %b %Y %l:%M %p") %>">&nbsp; &nbsp;&nbsp; &nbsp;
+  <small>
+    <% if time_ago_in_words(item.created_at).include? "less" %>
+      <%= time_ago_in_words(item.created_at).gsub('less','').gsub('than',''+'Just now').gsub('a','').gsub('minute','') %>
+    <% else %>
+      <%= time_ago_in_words(item.created_at).gsub('about','').gsub('ours','').gsub('our','').gsub('inutes','').gsub('ays','').gsub('inute','').gsub('ay','').gsub('over','')%>
+    <% end %>
+  </small>
+</span>

@@ -1,13 +1,12 @@
 <div class="comment clearfix">
   <span id="comment_<%= comment.id %>">
-    <div class="_content"><br />
-      <% if comment.user.avatar.present?%>
+    <div class="_content">
+      <br />
+      <% if comment.user.avatar.present? %>
         <%= image_tag(comment.user.avatar, size:"30x30", class: "img-circle")%>
       <% end %>
-      <span class="user-name comment_user_name"> 
-        <span data-toggle="tooltip" data-placement="bottom" title="" class="time user-name" data-original-title= " <%= comment.user.name %>">
+      <span class="user-name"> 
         <%= comment.user.name %>
-        </span>
       </span>
       <span class="comment">
         <strong><%= content_with_emoji(comment.cmnt) %></strong>
@@ -19,25 +18,16 @@
               <%= link_to dislike_post_comment_path(post, comment), method: :get, remote: true, class: "dislike_comment" do %>
                 <i class="material-icons ">thumb_up</i>
               <% end %>&nbsp;
-              <span data-toggle="tooltip" data-placement="down" title="" class="time user-name" data-original-title= "<%= comment.liked_users %>">
-               (<%= comment.get_upvotes.size %>)
-              </span>
+              <%= render partial: "posts/upvotes", locals: {item: comment} %>
             <% else %>
               <%= link_to like_post_comment_path(post, comment), method: :get, remote: true, class: "like_comment" do %>
                 <i class="material-icons beforelike">thumb_up</i>
               <% end %>&nbsp;
-              <span data-toggle="tooltip" data-placement="down" title="" class="time user-name" data-original-title= "<%= comment.liked_users %>">
-                (<%= comment.get_upvotes.size %>)
-              </span>
+              <%= render partial: "posts/upvotes", locals: {item: comment} %>
             <% end %>
           </span>
-        <% end %>     
-        <span data-toggle="tooltip" data-placement="top" title="" class="time user-name" data-original-title= "<%=comment.created_at.strftime("%d %b %Y %l:%M %p") %>">&nbsp; &nbsp;&nbsp; &nbsp;
-          <% if time_ago_in_words(comment.created_at).include? "less" %>
-            <%= time_ago_in_words(comment.created_at).gsub('less','').gsub('than',''+'Just now').gsub('a','').gsub('minute','') %>
-          <% else %>
-            <%= time_ago_in_words(comment.created_at).gsub('about','').gsub('ours','').gsub('our','').gsub('inutes','').gsub('ays','').gsub('inute','').gsub('ay','')%>
-          <% end %>
+        <% end %>
+          <%= render partial: "posts/time", locals: {item: comment} %>
         </span>
         <% if current_user == comment.user %>
           &nbsp; &nbsp;&nbsp; &nbsp;

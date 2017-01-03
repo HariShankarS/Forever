@@ -24,31 +24,14 @@ body {
   width: 100px;
   height: 100px; 
 }
-h1{
-  text-align: center;
-}
 
-.post {
+.post, .registration, .overlay, .col-md-6, .index {
   padding-left: 0px! important;
   padding-right: 0px! important;
 }
-.post-text {
-  font-family: Sniglet !important;
-}
-.user-name {
-  font-family: Sniglet !important;
-}
+
 .dropdown-menu.pull-left {
-  left:0;
-}
-.comment {
-  font-family: 'Josefin Sans', sans-serif;
-}
-.comment_user_name {
-  color: #848484;
-}
-.center {
-  width: 100%;
+  left: 0;
 }
 
 ._content {
@@ -58,23 +41,20 @@ h1{
   color: red;
   font-size: 35px! important;
 }
-.user-writing, h6 {
+.user-writing, h2, h1, h6, .post-text, .user-name, .labe {
   font-family: Sniglet !important; 
 }
-.user-status {
+.user-status, .comment {
   font-family: 'Josefin Sans', sans-serif;
 }
-h2,h5 {
+h2,h5,h1 {
   text-align: center;
 }
-.post-head {
+.post-head, .post-action {
   padding-left: 5%;
   padding-right: 5%;
 }
-.post-action {
-  padding-left: 5%;
-  padding-right: 5%;
-}
+
 .time {
   cursor:pointer;
 }
@@ -82,14 +62,12 @@ h2,h5 {
   color: #848484;
   font-size: 20px! important;
 }
-.post-action a {
-  outline: 0! important;
-}
-  #resizable { 
+
+#resizable { 
   max-width: 90%;
 }
 
-#comment-button {
+#comment-button, .post-action a, .sidenav a, .post-head a {
   outline: 0! important;  
 }
 
@@ -105,14 +83,11 @@ h2,h5 {
   transition: 0.5s;
   padding-top: 60px;
 }
-.sidenav a {
-  outline: 0;
-}
+
 .orange {
-  color: #FF8000 !important;
   top: 20px !important;
 }
-.glyphicon {
+.glyphicon, .navv {
   font-size: 30px;
 }
 .heading_in_nav {
@@ -121,8 +96,6 @@ h2,h5 {
 .navv {
   height: 100px;
   font-family: 'Jura', sans-serif;
-  font-size: 30px;
-  color: white; 
   padding-left: 25px! important;  
 }
 .row {
@@ -134,16 +107,13 @@ h2,h5 {
   color: #848484 !important;
   font-size: 15px !important;
 }
-.navv:hover {
-  color: #FF8000;
+.navv:hover, .orange {
+  color: #FF8000 !important;
 } 
 .closebtn {
-  position: absolute;
   top: 0;
   right: 12px;
   margin-left: 50px;
-  color: white;
-  text-decoration: none !important;
   padding-top: 10px;
 }
 .closebtn:hover,.closebtn:focus {
@@ -172,63 +142,46 @@ h2,h5 {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.post-head a{ 
-
-text-decoration: none;
-outline: 0! important;
+.closebtn, .post-head a{ 
+  text-decoration: none !important;
 }
-.registration {
-  padding-left: 0px! important;
-  padding-right: 0px! important;
+
+.overlay, .closebtn, .mainn {
+  position: absolute;
 }
 .overlay {
-  position: absolute;
   left: 0px;
   top: 0px;
-  z-index: -1; 
-  padding-left: 0px! important;
-  padding-right: 0px! important;
+  z-index: -1;
 }
 .transparent-input {
-  background-color:rgba(0,0,0,0) !important;
+  background-color: rgba(0,0,0,0) !important;
 }
-.labe {
+.labe, h1, .navv, .closebtn  {
   color: white;
-  font-family: Sniglet !important;     
 }
 .mainn {
   background: black;
   opacity: 0.6;
-  position: absolute;
   left: 0px;
   top: 0px;    
   margin-left: 0px! important;
   margin-top: 0px! important;
-  height: 672px;
 }
-h2 {
-  text-align: center;
-  font-family: Sniglet !important; 
+.innerdiv, .ri-grid, .fileinput-button, .image_wrapper {
+  overflow: hidden !important;
+}
+.devise-bs {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.ri-grid, .mainn {
+  height: 100vh !important;      
+}
+h1 {
+  font-weight: 800;
 }
 
-h1 {
-  text-align: center;
-  font-family: Sniglet !important; 
-  font-weight: 800;
-  color: white;
-}
-.innerdiv {
-  margin-top: 40px;
-  padding: 10px;
-}
-.col-md-6 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.index {
-  padding-left: 0px;
-  padding-right: 0px; 
-}
 .post-action .more_horiz {
   padding-top: 15px;
   padding-right: 15px;  
@@ -236,7 +189,6 @@ h1 {
 }
 .fileinput-button {
   position: relative;
-  overflow: hidden;
   float: left;
   margin-right: 4px;
   width: 90px;
@@ -253,20 +205,17 @@ h1 {
 .cover-pic {
   min-width: 100%;
 }
-.profile-pic {
+.profile-pic, .user_pics {
   border: 2px solid white;
 }
-.user_pics {
-  border: 2px solid white;  
+.user_pics, .magnify, .center {
   width: 100%;
 }
 .image_wrapper {
   max-width: 100%;
   border-radius: 5px 5px 0 0;
-  overflow: hidden;
 }
 .magnify {
-  width: 100%;
   height: 307.5px !important;
   -webkit-transition: all .3s ease-out;
   -moz-transition: all .3s ease-out;
@@ -277,6 +226,5 @@ h1 {
   }
 }
 .col-md-3 {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+  padding: 10px !important;
 }
