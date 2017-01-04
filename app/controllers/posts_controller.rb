@@ -11,18 +11,6 @@ class PostsController < ApplicationController
     @user_posts = Post.where(user_id: params[:id]).order("created_at DESC")
   end
 
-  def media
-    @user_posts = Post.where(user_id: params[:id]).order("created_at DESC")   
-  end
-
-  def likes
-    @votes = @user.votes.where(votable_type: "Post").includes(:votable).order("created_at DESC")
-    @posts = @votes.collect(&:votable)    
-  end
-
-  def shows
-  end
-
   def new
     @post = Post.new
   end
