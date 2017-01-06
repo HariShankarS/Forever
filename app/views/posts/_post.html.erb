@@ -28,7 +28,9 @@
           <% end -%>
           <% if post.photographs.present? %>
             <% post.photographs.each do |photograph| %>
-              <%= image_tag(photograph.chitram, size:"100x100") %>
+              <div class="col-md-6">
+                <%= image_tag(photograph.chitram, class: "img-responsive center") %>
+              </div>
             <% end %>  
           <% end %>
           <% if user_signed_in? %>
