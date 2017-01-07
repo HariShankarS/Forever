@@ -58,7 +58,7 @@
                       <i class="material-icons more_horiz">more_horiz</i>
                     </a>
                     <h6 class="dropdown-menu dropdown-menu-right">
-                      <li><%= link_to "View",post %></li>
+                      <li data-toggle="modal" data-target="#post-show-<%= post.id %>"><a>View</a></li>
                       <% if post.user == current_user %>  
                         <li><%= link_to 'Edit the post', edit_post_path(post) %></li>
                         <li><%= link_to 'Delete the post', post, method: :delete, remote: true, class: "delete_post", data: { confirm: 'Are you sure?' } %></li>
@@ -66,6 +66,7 @@
                     </h6>
                   </li>
                 </ul>
+                <%= render partial: "show", locals: {post: post} %>
               </div>
               <div id="comment-section" class="collapse"> 
                 <%= render partial: "comments/comments", locals: {post: post} %>  

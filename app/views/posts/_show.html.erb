@@ -1,0 +1,47 @@
+<div class="modal" id="post-show-<%= post.id %>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <span id="post_<%= post.id %>">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="post-head">
+                  <h3>
+                    <% if post.user.avatar.present? %>
+                      <%= image_tag(post.user.avatar.url(:medium), size:"50x50", class: "img-circle")%>
+                    <% end -%>
+                    <span class="user-name">
+                      <%= link_to user_posts_post_path(id: post.user_id) do %> 
+                        <%= post.user.name %>
+                      <% end %>
+                    </span>
+                    <span class="pull-right">
+                      <%= render partial: "time", locals: {item: post} %>
+                    </span>
+                  </h3><br />
+                  <div class="_content">
+                    <% if post.body.present? %>
+                      <h4 class="post-text"><%= content_with_emoji(post.body) %></h4>
+                    <% end -%>
+                  </div>
+                </div>
+                <% if post.avatar.present? %>
+                  <%= image_tag(post.avatar, class: "img-responsive center") %>
+                <% end -%>
+                <% if post.photographs.present? %>
+                  <% post.photographs.each do |photograph| %>
+                    <div class="col-md-6">
+                      <%= image_tag(photograph.chitram, class: "img-responsive center") %>
+                    </div>
+                  <% end %>  
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
