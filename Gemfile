@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '4.2.6'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'uglifier', '>= 1.3.0'
@@ -21,6 +20,7 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 group :development, :test do
   gem 'pry-byebug'
   gem 'byebug'
+  gem 'sqlite3'
 end
 
 group :development do
