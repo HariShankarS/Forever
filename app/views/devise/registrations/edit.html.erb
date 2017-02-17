@@ -5,6 +5,7 @@
     <% else %>
       <%= bootstrap_devise_error_messages! %>
     <% end -%>  
+    <h1> FOREVER </h1>    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <div class="field">
         <%= f.label :username, class:"labe" %>
@@ -15,7 +16,7 @@
         <%= f.file_field :avatar %>
       </div>  
       <div class="field ">
-        <%= f.label :status, class:"labe" %>
+        <%= f.label :status, class:"labe" %><br>
         <%= f.text_field :status, autofocus: true, class: "transparent-input" %>
       </div> 
       <div class="field ">
@@ -27,7 +28,7 @@
         <%= f.text_field :occupation, autofocus: true, class: "transparent-input" %>
       </div> 
       <div class="field">
-        <%= f.label :email, class:"labe" %>
+        <%= f.label :email, class:"labe" %><br>
         <%= f.email_field :email, autofocus: true, class: "transparent-input" %>
       </div>
 

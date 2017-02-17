@@ -4,11 +4,11 @@ class PostsController < ApplicationController
   before_action :find_user, only: [:user_posts, :media, :likes]
 
   def index
-    @posts = Post.all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
+    @posts = Post.includes(:user,:photographs,comments: :user).all.order("created_at DESC").paginate(page: params[:page], per_page: 4)
   end
 
   def user_posts
-    @user_posts = Post.where(user_id: params[:id]).order("created_at DESC")
+    @user_posts = Post.select("id","avatar_file_name").where(user_id: params[:id]).order("created_at DESC")
   end
 
   def new
