@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   end
 
 
-  def commented_users
-    User.joins("INNER JOIN comments on comments.user_id = users.id and comments.post_id = #{self.id}").select("REPLACE(group_concat(distinct users.name), ',', ', ') as commented_users").group("comments.post_id").first.try(:commented_users)
-  end
+  # def commented_users
+  #   User.joins("INNER JOIN comments on comments.user_id = users.id and comments.post_id = #{self.id}").select("REPLACE(group_concat(distinct users.name), ',', ', ') as commented_users").group("comments.post_id").first.try(:commented_users)
+  # end
 end
